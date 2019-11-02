@@ -1,7 +1,9 @@
-let a = 4;
+import io from "socket.io-client";
 
-const test = (a: any) => {
-  console.log(a);
-}
+console.log("hello");
 
-console.log(a);
+const socket = io("ws://127.0.0.1:8081/");
+
+socket.on("test", (message: string) => {
+  console.log(message);
+});
